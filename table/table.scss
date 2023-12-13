@@ -1,0 +1,197 @@
+%flex {
+    display: flex;
+    align-items: center;
+  }
+  
+  .bnpl-table {
+    background: var(--white);
+    border: 1px solid var(--separator);
+    border-radius: 8px;
+    margin-bottom: 30px;
+  
+    .table {
+      border-collapse: separate;
+      border-spacing: 0;
+      border-radius: 8px;
+      width: 100%;
+  
+      tr,
+      th,
+      td {
+        font-family: 'Mulish', sans-serif;
+      }
+  
+      th {
+        font-size: 13px;
+        font-weight: 500;
+        color: #fff;
+        padding: 15px 12px;
+  
+        &:first-child {
+          border-top-left-radius: 8px;
+        }
+  
+        &:last-child {
+          border-top-right-radius: 8px;
+        }
+      }
+  
+      thead {
+        text-align: left;
+        background-color: #3a579f;
+  
+        tr {
+          border-top-left-radius: 8px;
+          border-bottom: 0;
+        }
+      }
+  
+      .table-row {
+        font-weight: 500;
+        color: #252733;
+  
+        td {
+          color: #656d76;
+          font-size: 12px;
+          font-weight: 500;
+          padding: 8px 12px;
+          letter-spacing: 0.2px;
+          border-bottom: 1px solid var(--separator);
+        }
+  
+        .table-row-name,
+        .table-row-icon {
+          @extend %flex;
+          position: relative;
+        }
+  
+        .table-row-name {
+          gap: 6px;
+  
+          & span {
+            font-family: 'Mulish', sans-serif;
+          }
+        }
+  
+        .table-row-dot {
+          background-color: var(--success-color);
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+  
+          &.dot-success {
+            background-color: var(--success-color);
+          }
+  
+          &.dot-warning {
+            background-color: var(--warning-color);
+          }
+  
+          &.dot-error {
+            background-color: var(--error-color);
+          }
+  
+          &.dot-info {
+            background-color: var(--info-color);
+          }
+        }
+  
+        .success-text {
+          color: var(--success-color);
+        }
+  
+        .warning-text {
+          color: var(--warning-color);
+        }
+  
+        .table-row-icon {
+          position: relative;
+          cursor: pointer;
+  
+          svg {
+            transform: rotate(90deg);
+          }
+        }
+      }
+    }
+  
+    .menu {
+      display: inline-block;
+      width: 100px;
+      padding: 0;
+      min-width: 50px;
+      position: absolute;
+      right: 0;
+      top: 25px;
+      background-color: var(--white);
+      border-radius: 5px;
+      box-shadow: 0px 4px 8px rgb(0 0 0 / 10%);
+      z-index: 1000;
+      min-width: 175px;
+      transition: all 0.3s ease-in-out;
+  
+      z-index: 1000;
+  
+      .menu-item {
+        padding: 12px 15px;
+  
+        cursor: pointer;
+        user-select: none;
+        font-size: 12px;
+        color: var(--text);
+        font-weight: 400;
+        border-bottom: 1px solid var(--separator);
+  
+        &:hover {
+          background-color: var(--grey-hover);
+          color: var(--blue);
+        }
+  
+        &:first-child {
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px;
+        }
+  
+        &:last-child {
+          border-bottom: none;
+          border-bottom-left-radius: 5px;
+          border-bottom-right-radius: 5px;
+          border-bottom: 0;
+        }
+      }
+    }
+  
+    .bnpl-table-pagination {
+      @extend %flex;
+      color: var(--light);
+      padding: 20px;
+      gap: 15px;
+      justify-content: flex-end;
+      user-select: none;
+  
+      & select {
+        outline: 0;
+        border: 0;
+      }
+  
+      .bnpl-table-pagination-label,
+      select {
+        font-family: 'Mulish', sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+      }
+  
+      .bnpl-table-pagination-icon,
+      select {
+        cursor: pointer;
+      }
+    }
+  }
+  
+  .bnpl-overview-no-data {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 35px;
+    font-size: 20px;
+  }

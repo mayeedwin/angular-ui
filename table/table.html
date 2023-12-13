@@ -1,0 +1,41 @@
+<section *ngIf="retailers.length" class="bnpl-table-pagination">
+    <div class="bnpl-table-pagination-label">Rows per page</div>
+    <select (ngModelChange)="onPageSizeChange($event)" [(ngModel)]="pageSize" class="bnpl-table-pagination-select">
+      <option *ngFor="let size of pageSizes" [value]="size">
+        {{ size }}
+      </option>
+    </select>
+    <div class="bnpl-table-pagination-label">{{ itemRange.start }} - {{ itemRange.end }} of {{ totalItems }}</div>
+    <svg
+      (click)="onPageChange('prev')"
+      class="bnpl-table-pagination-icon"
+      fill="none"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M15 18L9.07071 12.0707C9.03166 12.0317 9.03166 11.9683 9.07071 11.9293L15 6"
+        stroke="#9FA2B4"
+        stroke-linecap="round"
+        stroke-width="2"
+      />
+    </svg>
+    <svg
+      (click)="onPageChange('next')"
+      class="bnpl-table-pagination-icon"
+      fill="none"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M9 18L14.9293 12.0707C14.9683 12.0317 14.9683 11.9683 14.9293 11.9293L9 6"
+        stroke="#9FA2B4"
+        stroke-linecap="round"
+        stroke-width="2"
+      />
+    </svg>
+  </section>
